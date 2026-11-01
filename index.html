@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة نون | Noon Bookstore</title>
+    
+    <!-- Google Fonts: Cairo for Arabic, Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#2B3A67',
+                        maroon: '#8B1E28',
+                    },
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            /* Fallback font */
+            font-family: 'Cairo', sans-serif;
+            background-color: #2B3A67;
+            background-image: linear-gradient(135deg, #2B3A67 0%, #1a233f 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-logo {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 4px;
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Prevent tap highlight on mobile */
+        a, button {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-white relative overflow-x-hidden antialiased">
+
+    <!-- Header containing Logo and Language Toggle -->
+    <!-- Flex structure with justify-between automatically handles LTR/RTL positioning -->
+    <header class="w-full max-w-5xl mx-auto p-5 sm:p-8 flex justify-between items-center absolute top-0 left-0 right-0 z-20">
+        <!-- Image Logo -->
+        <img src="شعار مكتبة نون.png" alt="Noon Bookstore Logo" class="brand-logo drop-shadow-md">
+        
+        <!-- Language Toggle Button -->
+        <button id="langToggle" class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-sm sm:text-base font-semibold transition-colors focus:outline-none shadow-lg">
+            English
+        </button>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow flex flex-col items-center justify-center py-28 px-4 sm:px-6 w-full z-10">
+        
+        <!-- Glassmorphism Card for Desktop & Mobile -->
+        <div class="w-full max-w-md md:max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-[2rem] p-6 sm:p-10 flex flex-col items-center transition-all duration-500 hover:shadow-maroon/10 hover:shadow-[0_20px_50px_rgba(139,30,40,0.15)]">
+            
+            <!-- Headers -->
+            <div class="text-center mb-8 w-full">
+                <h1 id="title" class="text-3xl sm:text-4xl font-bold mb-3 drop-shadow-md tracking-tight">
+                    مكتبة نون
+                </h1>
+                <p id="subtitle" class="text-gray-200 text-sm sm:text-base md:text-lg font-medium opacity-90">
+                    للخدمات الهندسية والجامعية
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="w-full flex flex-col gap-4">
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/963945801643" target="_blank" rel="noopener noreferrer" class="link-btn group flex items-center bg-white text-navy hover:bg-maroon hover:text-white p-4 rounded-2xl shadow-md w-full">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 text-navy group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </div>
+                    <span id="btn-wa" class="flex-1 text-center font-bold text-base sm:text-lg px-2 sm:px-4">
+                        تواصل معنا عبر واتساب
+                    </span>
+                    <div class="w-12"></div> <!-- Spacer for perfect centering -->
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/noon.bookstore.sy?psln=NDQwcXBpNTk1ZDVj" target="_blank" rel="noopener noreferrer" class="link-btn group flex items-center bg-white text-navy hover:bg-maroon hover:text-white p-4 rounded-2xl shadow-md w-full">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 text-navy group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </div>
+                    <span id="btn-ig" class="flex-1 text-center font-bold text-base sm:text-lg px-2 sm:px-4">
+                        تابعنا على إنستغرام
+                    </span>
+                    <div class="w-12"></div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1C5JA38q3P/" target="_blank" rel="noopener noreferrer" class="link-btn group flex items-center bg-white text-navy hover:bg-maroon hover:text-white p-4 rounded-2xl shadow-md w-full">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 text-navy group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <i class="fa-brands fa-facebook-f text-2xl"></i>
+                    </div>
+                    <span id="btn-fb" class="flex-1 text-center font-bold text-base sm:text-lg px-2 sm:px-4">
+                        صفحتنا على فيسبوك
+                    </span>
+                    <div class="w-12"></div>
+                </a>
+
+                <!-- Location -->
+                <a href="https://maps.app.goo.gl/RcrDCAUJu36D6GVJ9" target="_blank" rel="noopener noreferrer" class="link-btn group flex items-center bg-white text-navy hover:bg-maroon hover:text-white p-4 rounded-2xl shadow-md w-full">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 text-navy group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-location-dot text-2xl"></i>
+                    </div>
+                    <span id="btn-loc" class="flex-1 text-center font-bold text-base sm:text-lg px-2 sm:px-4">
+                        موقع المكتبة
+                    </span>
+                    <div class="w-12"></div>
+                </a>
+
+            </div>
+
+            <!-- Address Section -->
+            <div class="mt-8 text-center text-gray-200 text-xs sm:text-sm md:text-base font-medium opacity-90 py-3 px-5 bg-navy/40 border border-white/10 rounded-xl flex items-center justify-center gap-3 w-full">
+                <i class="fa-solid fa-map-pin text-maroon text-lg"></i>
+                <p id="address-text">سلمية - مجمع سيلينا - الكتلة الثالثة</p>
+            </div>
+
+            <!-- Footer Note -->
+            <footer class="mt-8 text-white/40 text-xs font-medium text-center">
+                <p id="footer-text">© 2024 مكتبة نون. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Language and Initialization Script -->
+    <script>
+        // Dictionary for translations
+        const translations = {
+            ar: {
+                title: "مكتبة نون",
+                subtitle: "للخدمات الهندسية والجامعية",
+                wa: "تواصل معنا عبر واتساب",
+                ig: "تابعنا على إنستغرام",
+                fb: "صفحتنا على فيسبوك",
+                loc: "موقع المكتبة",
+                address: "سلمية - مجمع سيلينا - الكتلة الثالثة",
+                toggleBtn: "English",
+                footer: "© 2024 مكتبة نون. جميع الحقوق محفوظة."
+            },
+            en: {
+                title: "Noon Bookstore",
+                subtitle: "Engineering & University Services",
+                wa: "Contact via WhatsApp",
+                ig: "Follow on Instagram",
+                fb: "Facebook Page",
+                loc: "Our Location",
+                address: "Salamiyah - Celina Complex - Third Block",
+                toggleBtn: "العربية",
+                footer: "© 2024 Noon Bookstore. All rights reserved."
+            }
+        };
+
+        // Detect user's preferred language from the browser
+        let currentLang = navigator.language.toLowerCase().startsWith('ar') ? 'ar' : 'en';
+
+        // Elements
+        const htmlTag = document.documentElement;
+        const bodyTag = document.body;
+        const titleEl = document.getElementById('title');
+        const subtitleEl = document.getElementById('subtitle');
+        const btnWa = document.getElementById('btn-wa');
+        const btnIg = document.getElementById('btn-ig');
+        const btnFb = document.getElementById('btn-fb');
+        const btnLoc = document.getElementById('btn-loc');
+        const toggleBtn = document.getElementById('langToggle');
+        const footerText = document.getElementById('footer-text');
+        const addressText = document.getElementById('address-text');
+
+        // Function to update the DOM based on selected language
+        function applyLanguage(lang) {
+            const data = translations[lang];
+            
+            // Set Document Direction and Lang Attribute
+            htmlTag.lang = lang;
+            htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // Set Font Family
+            if (lang === 'ar') {
+                bodyTag.classList.remove('font-english');
+                bodyTag.classList.add('font-arabic');
+            } else {
+                bodyTag.classList.remove('font-arabic');
+                bodyTag.classList.add('font-english');
+            }
+
+            // Apply Texts
+            titleEl.textContent = data.title;
+            subtitleEl.textContent = data.subtitle;
+            btnWa.textContent = data.wa;
+            btnIg.textContent = data.ig;
+            btnFb.textContent = data.fb;
+            btnLoc.textContent = data.loc;
+            toggleBtn.textContent = data.toggleBtn;
+            footerText.textContent = data.footer;
+            addressText.textContent = data.address;
+        }
+
+        // Event Listener for the Toggle Button
+        toggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            applyLanguage(currentLang);
+        });
+
+        // Apply initially on load
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>
